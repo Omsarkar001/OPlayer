@@ -1,5 +1,8 @@
-const clientId = "YOUR_CLIENT_ID"; // Replace with your Spotify Client ID
-const redirectUri = "YOUR_REDIRECT_URI"; // Replace with your Redirect URI
+// Replace with your Spotify app credentials
+const clientId = "eaf93b0ac3654a1eb7683357ab6e8f5c"; // Spotify Client ID
+const redirectUri = "http://localhost:5500/"; // Match this with Spotify's dashboard entry
+
+
 const scopes = "user-read-playback-state user-modify-playback-state";
 
 const loginBtn = document.getElementById("login-btn");
@@ -42,6 +45,7 @@ async function fetchCurrentlyPlaying(accessToken) {
     playerDiv.classList.remove("hidden");
   } else {
     console.error("Failed to fetch currently playing track.");
+    alert("Unable to fetch currently playing track. Make sure a track is playing on your Spotify account.");
   }
 }
 
